@@ -22216,11 +22216,11 @@ sub {
   }
 }
 
-page-home .center {
+page-page1 .center {
   text-align: center;
 }
 
-page-home .ionic-logo {
+page-page1 .ionic-logo {
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -22235,7 +22235,7 @@ page-home .ionic-logo {
   -webkit-animation: spin 2s infinite linear;
 }
 
-page-home .ionic-logo:after {
+page-page1 .ionic-logo:after {
   content: '';
   position: absolute;
   width: 38px;
@@ -22250,7 +22250,7 @@ page-home .ionic-logo:after {
   -webkit-border-radius: 100%;
 }
 
-page-home .ionic-logo:before {
+page-page1 .ionic-logo:before {
   content: '';
   background: #5E86C4;
   width: 14px;

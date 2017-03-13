@@ -1,5 +1,5 @@
 {
-  "name": "io.cordova.myappef80cb",
+  "name": "io.cordova.myappa83f6a",
   "author": "",
   "homepage": "",
   "private": true,
@@ -32,7 +32,6 @@
     "@ionic/app-scripts": "1.1.0",
     "typescript": "2.0.9"
   },
-  "description": "Ionic2Tabs: An Ionic project",
   "cordovaPlugins": [
     "cordova-plugin-whitelist",
     "cordova-plugin-console",
@@ -42,7 +41,5 @@
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [],
-  "-vs-binding": {
-    "BeforeBuild": [ "ionic:build" ]
-  }
+  "-vs-binding": { "BeforeBuild": [ "ionic:build" ] }
 }
