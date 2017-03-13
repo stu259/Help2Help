@@ -95,4 +95,6 @@
   <plugin name="cordova-plugin-statusbar" spec="2.2.1" />
   <plugin name="cordova-plugin-device" spec="1.1.4" />
   <plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
+  <preference name="android-maxSdkVersion" value="25" />
+  <preference name="android-targetSdkVersion" value="25" />
 </widget>
