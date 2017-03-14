@@ -31,6 +31,9 @@ $RECYCLE.BIN/
 Help2HelpMobileApp/Help2Help/simulation/
 Help2HelpMobileApp/.vs/
 
+Help2HelpWebService/Help2HelpWebService/obj/
+Help2HelpWebService/packages
+
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
