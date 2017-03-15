@@ -37,6 +37,7 @@ export class LoginPage {
                 alert.present();
                 return;
             }
+           
 
             let loader = this.loadingCtrl.create({
                 content: "Logging in..."
