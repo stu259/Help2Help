@@ -1,11 +1,14 @@
 ﻿<ion-header>
   <ion-navbar>
+    <button ion-button menuToggle (click)="openMenu()">
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
-      Home
+      Title
     </ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="logout()">
-        <ion-icon name="exit"></ion-icon>
+      <button ion-button (click)="doClick()">
+        <ion-icon name="funnel"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -13,7 +16,7 @@
 
 <ion-content class="home" padding>
 
-  <h2 class="center">Ionic 2 - Blank Starter</h2>
+  <h2 class="center">Help2Help</h2>
   <h2>Welcome back, {{ user.details.name }}</h2>
   <div class="center">
     <p class="ionic-logo"></p>
@@ -27,27 +30,27 @@
     <ion-list>
       <button ion-item (click)="onLink('http://go.microsoft.com/fwlink/?LinkID=820516')">
         <ion-icon name="jet" item-left></ion-icon>
-        Getting Started
+       please
       </button>
 
       <button ion-item (click)="onLink('http://go.microsoft.com/fwlink/?LinkID=820761')">
         <ion-icon name="ionic" item-left></ion-icon>
-        Ionic Framework
+        help
       </button>
 
       <button ion-item (click)="onLink('http://go.microsoft.com/fwlink/?LinkID=820520')">
         <ion-icon name="thunderstorm" item-left></ion-icon>
-        Azure Services
+        i
       </button>
 
       <button ion-item (click)="onLink('http://go.microsoft.com/fwlink/?LinkID=820524')">
         <ion-icon name="cafe" item-left></ion-icon>
-        Plugins Support
+        am
       </button>
 
       <button ion-item (click)="onLink('http://go.microsoft.com/fwlink/?LinkID=820526')">
         <ion-icon name="paw" item-left></ion-icon>
-        Troubleshooting
+        lost
       </button>
     </ion-list>
 

@@ -2,6 +2,7 @@
 import { NavController } from 'ionic-angular';
 import { Auth, User } from '@ionic/cloud-angular';
 import { LoginPage } from '../login/login';
+import { MenuController } from'ionic-angular';
 
 @Component({
     selector: 'page-home',
@@ -9,7 +10,7 @@ import { LoginPage } from '../login/login';
 })
 export class HomePage {
 
-    constructor(public navCtrl: NavController, public user: User, public auth: Auth) {
+    constructor(public navCtrl: NavController, public user: User, public auth: Auth, public menuCtrl: MenuController) {
 
     }
 
@@ -20,5 +21,8 @@ export class HomePage {
     logout() {
         this.auth.logout();
         this.navCtrl.setRoot(LoginPage);
+    }
+    openMenu(){
+        this.menuCtrl.open();
     }
 }
