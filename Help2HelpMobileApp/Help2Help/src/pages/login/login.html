@@ -1,12 +1,19 @@
 ﻿<ion-header>
 
   <ion-navbar>
-    <ion-title>Login/Register</ion-title>
+
+    <ion-title>
+      <div *ngIf="showLogin">
+      <h2 class="center">Login</h2>
+      </div>
+      <div *ngIf="!showLogin">
+      <h2 class="center">Register</h2>
+      </div>
+    </ion-title>
+    
   </ion-navbar>
 
 </ion-header>
-
-
 <ion-content padding>
 
   <div *ngIf="showLogin">

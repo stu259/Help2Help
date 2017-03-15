@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { ProfilePage } from '../pages/profile/profile';
 
 const cloudSettings: CloudSettings = {
     'core': {
@@ -15,7 +16,8 @@ const cloudSettings: CloudSettings = {
     declarations: [
         MyApp,
         HomePage,
-        LoginPage
+        LoginPage,
+        ProfilePage
     ],
     imports: [
         IonicModule.forRoot(MyApp),
@@ -25,7 +27,8 @@ const cloudSettings: CloudSettings = {
     entryComponents: [
         MyApp,
         HomePage,
-        LoginPage
+        LoginPage, 
+        ProfilePage
     ],
     providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
