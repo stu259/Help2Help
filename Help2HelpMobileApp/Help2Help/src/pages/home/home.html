@@ -1,11 +1,10 @@
 ﻿<ion-header>
   <ion-navbar>
-    <button ion-button menuToggle (click)="openMenu()">
+    <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
       <h3 class="center">Help2Help</h3>
-      
     </ion-title>
     <ion-buttons end>
       <button ion-button (click)="doClick()">
@@ -15,23 +14,9 @@
   </ion-navbar>
 </ion-header>
 
-<ion-menu [content] = "content">
-      <ion-content id="content">
-        <ion-list>
-          <ion-item>Hi, {{ user.details.name }}</ion-item>
-          <ion-item (click) = "profile()">My Profile</ion-item>
-          <ion-item>My ads</ion-item>
-          <!--<ion-item menuClose detail-none>Close</ion-item>-->
-          <ion-item (click) = "logout()">Logout</ion-item>
-        </ion-list>
-      </ion-content>
-    </ion-menu>
-    <ion-nav #content [root] = "home"></ion-nav>
-
 <ion-content class="home" padding>
 
   <h2 class="center">Home</h2>
-  <h2>Welcome back, {{ user.details.name }}</h2>
   <div class="center">
     <p class="ionic-logo"></p>
   </div>
@@ -40,34 +25,5 @@
     <ion-card-header>
       Docs are here to help you
     </ion-card-header>
-
-    <ion-list>
-      <button ion-item (click)="onLink('http://go.microsoft.com/fwlink/?LinkID=820516')">
-        <ion-icon name="jet" item-left></ion-icon>
-       please
-      </button>
-
-      <button ion-item (click)="onLink('http://go.microsoft.com/fwlink/?LinkID=820761')">
-        <ion-icon name="ionic" item-left></ion-icon>
-        help
-      </button>
-
-      <button ion-item (click)="onLink('http://go.microsoft.com/fwlink/?LinkID=820520')">
-        <ion-icon name="thunderstorm" item-left></ion-icon>
-        i
-      </button>
-
-      <button ion-item (click)="onLink('http://go.microsoft.com/fwlink/?LinkID=820524')">
-        <ion-icon name="cafe" item-left></ion-icon>
-        am
-      </button>
-
-      <button ion-item (click)="onLink('http://go.microsoft.com/fwlink/?LinkID=820526')">
-        <ion-icon name="paw" item-left></ion-icon>
-        lost
-      </button>
-    </ion-list>
-
   </ion-card>
-
 </ion-content>

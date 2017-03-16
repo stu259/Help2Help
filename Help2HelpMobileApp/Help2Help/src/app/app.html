@@ -1,1 +1,16 @@
-<ion-nav [root]="rootPage"></ion-nav>
+﻿<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Hello, {{ user.details.name }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item (click)="profile()">My Profile</ion-item>
+      <ion-item>My ads</ion-item>
+      <ion-item menuClose (click)="logout()">Logout
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
