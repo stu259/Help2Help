@@ -1,0 +1,34 @@
+﻿<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <h3 class="center">Help2Help</h3>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="doClick()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home" padding>
+  <h2 class="center">My ads</h2>
+  <ion-list>
+
+    <ion-item can-swipe="true" *ngFor="item of items">
+      <h2>{{item.title}}</h2>
+
+      <ion-option-button class="button-info"
+                         ng-click="edit(item)">
+        Edit
+      </ion-option-button>
+      <ion-delete-button class="ion-minus-circled"
+                         ng-click="items.splice($index, 1)">
+      </ion-delete-button>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

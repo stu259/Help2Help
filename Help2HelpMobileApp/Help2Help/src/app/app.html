@@ -5,12 +5,14 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <ion-list>
-      <ion-item (click)="profile()">My Profile</ion-item>
-      <ion-item>My ads</ion-item>
-      <ion-item menuClose (click)="logout()">Logout
+    <!--<ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+      <ion-item menuClose (click)="logout()">
+        Logout
       </ion-item>
-    </ion-list>
+    </ion-list>-->
   </ion-content>
 </ion-menu>
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
