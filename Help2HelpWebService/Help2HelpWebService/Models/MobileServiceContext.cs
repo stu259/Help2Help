@@ -36,5 +36,7 @@ namespace Help2HelpWebService.Models
         }
 
         public System.Data.Entity.DbSet<Help2HelpWebService.DataObjects.Advertising> Advertisings { get; set; }
+
+        public System.Data.Entity.DbSet<Help2HelpWebService.DataObjects.User> Users { get; set; }
     }
 }
