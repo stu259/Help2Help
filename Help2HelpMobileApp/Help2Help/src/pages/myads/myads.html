@@ -16,19 +16,4 @@
 
 <ion-content class="home" padding>
   <h2 class="center">My ads</h2>
-  <ion-list>
-
-    <ion-item can-swipe="true" *ngFor="item of items">
-      <h2>{{item.title}}</h2>
-
-      <ion-option-button class="button-info"
-                         ng-click="edit(item)">
-        Edit
-      </ion-option-button>
-      <ion-delete-button class="ion-minus-circled"
-                         ng-click="items.splice($index, 1)">
-      </ion-delete-button>
-    </ion-item>
-
-  </ion-list>
 </ion-content>

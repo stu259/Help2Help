@@ -15,15 +15,10 @@
 </ion-header>
 
 <ion-content class="home" padding>
-
-  <h2 class="center">Home</h2>
-  <div class="center">
-    <p class="ionic-logo"></p>
-  </div>
-
-  <ion-card>
-    <ion-card-header>
-      Docs are here to help you
-    </ion-card-header>
-  </ion-card>
+  <ion-list>
+    <ion-item *ngFor="let ad of ads">
+      <h2>{{ ad.title }}</h2>
+      <p>{{ ad.description }}</p>
+    </ion-item>
+  </ion-list>
 </ion-content>
