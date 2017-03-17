@@ -34,5 +34,7 @@ namespace Help2HelpWebService.Models
                 new AttributeToColumnAnnotationConvention<TableColumnAttribute, string>(
                     "ServiceTableColumn", (property, attributes) => attributes.Single().ColumnType.ToString()));
         }
+
+        public System.Data.Entity.DbSet<Help2HelpWebService.DataObjects.Advertising> Advertisings { get; set; }
     }
 }
