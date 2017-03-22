@@ -16,7 +16,6 @@
       <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW60Ns33kdDT6XOyPKcnmCuK9u8UUGXbuw6dwGC9OJ23T9hZE5JKpkRA"></ion-img>
     </ion-item>
   </div>
-  <div class="right">
     <ion-item>
       <ion-label color="dark" fixed>Name: </ion-label>
       <ion-input value="{{ user.details.name }}"></ion-input>
@@ -33,15 +32,17 @@
       <ion-input type="password"></ion-input>
     </ion-item>
     <ion-item>
-      <p class="right">
       <button ion-button small>
         Change password
       </button>
-      </p>
     </ion-item>
     <ion-item>
       <ion-label color="dark">Bio: </ion-label>
       <ion-textarea placeholder="Create your bio here" rows ="6"></ion-textarea>
     </ion-item>
-  </div>
+    <ion-item>
+      <button ion-button>
+        Apply changes
+      </button>
+    </ion-item>
 </ion-content>
