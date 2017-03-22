@@ -11,4 +11,37 @@
 
 <ion-content class="home" padding>
   <h2 class="center">Profile</h2>
+  <div class="left">
+    <ion-item>
+      <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW60Ns33kdDT6XOyPKcnmCuK9u8UUGXbuw6dwGC9OJ23T9hZE5JKpkRA"></ion-img>
+    </ion-item>
+  </div>
+  <div class="right">
+    <ion-item>
+      <ion-label color="dark" fixed>Name: </ion-label>
+      <ion-input value="{{ user.details.name }}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="dark"><h2>Age: </h2></ion-label>
+      <ion-datetime displayFormat ="DD/MM/YYYY"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label color="dark">Rating: ****</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label color="dark">Current password: </ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <p class="right">
+      <button ion-button small>
+        Change password
+      </button>
+      </p>
+    </ion-item>
+    <ion-item>
+      <ion-label color="dark">Bio: </ion-label>
+      <ion-textarea placeholder="Create your bio here" rows ="6"></ion-textarea>
+    </ion-item>
+  </div>
 </ion-content>
