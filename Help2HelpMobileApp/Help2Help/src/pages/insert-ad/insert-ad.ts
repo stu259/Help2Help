@@ -1,4 +1,5 @@
 ﻿import { Component } from '@angular/core';
+import { ViewController } from 'ionic-angular';
 
 @Component({
     selector: 'page-insert-ad',
@@ -7,12 +8,15 @@
 export class InsertAdPage {
 
     location: string = '';
-    constructor() {
+    constructor(public viewCtrl: ViewController) {
 
     }
 
     autoFillLocation() {
-
         this.location = 'apple';
+    }
+
+    close() {
+      this.viewCtrl.dismiss();
     }
 }
