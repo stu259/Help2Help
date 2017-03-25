@@ -1,5 +1,6 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { ViewController } from 'ionic-angular';
+import { Geolocation } from '@ionic-native/geolocation';
 
 @Component({
     selector: 'page-insert-ad',
@@ -8,12 +9,13 @@ import { ViewController } from 'ionic-angular';
 export class InsertAdPage {
 
     location: string = '';
-    constructor(public viewCtrl: ViewController) {
+    constructor(public viewCtrl: ViewController, private geoLocation: Geolocation) {
 
     }
 
     autoFillLocation() {
-        this.location = 'apple';
+        this.geoLocation.getCurrentPosition().then((pos) => { this.location = 'lat: ' + pos.coords.latitude + ', lon: ' + pos.coords.longitude;
+        }).catch((error) => {this.location = 'Could not get geolocation';});
     }
 
     close() {

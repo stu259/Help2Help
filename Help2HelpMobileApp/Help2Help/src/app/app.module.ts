@@ -7,6 +7,7 @@ import { LoginPage } from '../pages/login/login';
 import { ProfilePage } from '../pages/profile/profile';
 import { MyAdsPage } from '../pages/myads/myads';
 import { InsertAdPage } from '../pages/insert-ad/insert-ad';
+import { Geolocation } from '@ionic-native/geolocation';
 
 const cloudSettings: CloudSettings = {
     'core': {
@@ -36,6 +37,6 @@ const cloudSettings: CloudSettings = {
         MyAdsPage,
         InsertAdPage
     ],
-    providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
+    providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler}, Geolocation]
 })
 export class AppModule { }
