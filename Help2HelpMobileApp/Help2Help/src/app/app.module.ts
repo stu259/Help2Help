@@ -2,7 +2,7 @@
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { HomePage, PopoverPage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { ProfilePage } from '../pages/profile/profile';
 import { MyAdsPage } from '../pages/myads/myads';
@@ -22,7 +22,8 @@ const cloudSettings: CloudSettings = {
         LoginPage,
         ProfilePage,
         MyAdsPage,
-        InsertAdPage
+        InsertAdPage,
+        PopoverPage
     ],
     imports: [
         IonicModule.forRoot(MyApp),
@@ -35,7 +36,8 @@ const cloudSettings: CloudSettings = {
         LoginPage,
         ProfilePage,
         MyAdsPage,
-        InsertAdPage
+        InsertAdPage,
+        PopoverPage
     ],
     providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler}, Geolocation]
 })
