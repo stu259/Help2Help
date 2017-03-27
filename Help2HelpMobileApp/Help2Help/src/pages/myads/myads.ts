@@ -17,5 +17,7 @@ export class MyAdsPage {
       let modal = this.modalCtrl.create(InsertAdPage);
       modal.present();
     }
+    removeAd(ad) {
+    }
 
 }
