@@ -17,14 +17,17 @@
 <ion-content class="home" padding>
     <ion-list>
         <ion-item *ngFor="let ad of ads">
+          
           <ion-icon name="build" item-left></ion-icon>
           <h2>{{ ad.title }}</h2>
           <p>{{ ad.description }}</p>
+          <p>{{ad.userId}}</p>
           <p item-right>
             {{ ad.location }}
             {{ ad.date }}
             {{ ad.accepted }}
           </p>
+           
         </ion-item>
     </ion-list>
 </ion-content>

@@ -24,7 +24,8 @@ export class AdService {
                 });
         });
     }
-
+    loadSpecificUser() {
+    }
     getFullAddress(lat, lng) {
         var API_KEY = "AIzaSyBHwQ12lqjQybAUN7WPeBBHIK1E0wpMefM";
         if (this.data1) {

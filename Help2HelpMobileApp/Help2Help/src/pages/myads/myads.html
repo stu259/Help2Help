@@ -17,8 +17,8 @@
 <ion-content class="home" padding>
   <h2 class="center">My ads</h2>
   <ion-list>
-  <ion-item-sliding *ngFor="let ad of ads">
-    <ion-item>
+  <ion-item-sliding *ngFor="let ad of ads" >
+    <ion-item *ngIf="ad.userId==2">
       <ion-icon name="build" item-left></ion-icon>
       <h2>{{ ad.title }}</h2>
       <p>{{ ad.description }}</p>
