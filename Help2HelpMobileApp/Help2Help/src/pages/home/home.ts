@@ -1,6 +1,7 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController, PopoverController, NavParams } from 'ionic-angular';
+import { NavController, ModalController, PopoverController, NavParams } from 'ionic-angular';
 import { AdService } from '../../providers/ad-service/ad-service';
+import { ViewAdPage } from '../view-ad/view-ad';
 
 @Component({
     template: `
@@ -21,7 +22,7 @@ export class PopoverPage {
 export class HomePage {
     ads: any;
 
-    constructor(public navCtrl: NavController, public adsService: AdService, public popoverCtrl: PopoverController) {
+    constructor(public navCtrl: NavController, public adsService: AdService, public popoverCtrl: PopoverController, public modalCtrl: ModalController) {
         this.loadAds();
     }
     pop(ev) {
@@ -36,5 +37,11 @@ export class HomePage {
             .then(data => {
                 this.ads = data;
             });
+    }
+
+    showAdDetails(name) {
+      alert(name);
+      let modal = this.modalCtrl.create(ViewAdPage);
+      modal.present();
     }
 }
