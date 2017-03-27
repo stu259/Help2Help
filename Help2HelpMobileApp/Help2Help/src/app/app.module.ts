@@ -1,13 +1,14 @@
 ﻿import { NgModule, ErrorHandler } from '@angular/core';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { Geolocation } from '@ionic-native/geolocation';
+
 import { MyApp } from './app.component';
 import { HomePage, PopoverPage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { ProfilePage } from '../pages/profile/profile';
 import { MyAdsPage } from '../pages/myads/myads';
 import { InsertAdPage } from '../pages/insert-ad/insert-ad';
-import { Geolocation } from '@ionic-native/geolocation';
 
 const cloudSettings: CloudSettings = {
     'core': {
