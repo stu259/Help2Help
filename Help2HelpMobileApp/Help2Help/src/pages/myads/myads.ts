@@ -2,14 +2,16 @@
 import { NavController } from 'ionic-angular';
 import { ModalController, ViewController } from 'ionic-angular';
 import { InsertAdPage } from '../insert-ad/insert-ad';
+import { AdService } from '../../providers/ad-service/ad-service';
 
 @Component({
     selector: 'page-myads',
-    templateUrl: 'myads.html'
+    templateUrl: 'myads.html',
+    providers: [AdService]
 })
 export class MyAdsPage {
 
-    constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
+    constructor(public navCtrl: NavController, public modalCtrl: ModalController, public adsService: AdService) {
 
     }
 

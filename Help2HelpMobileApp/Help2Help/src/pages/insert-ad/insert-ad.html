@@ -12,11 +12,11 @@
   </ion-navbar>
   <ion-item>
     <ion-label color="dark" fixed>Title: </ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="titleText"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label color="dark">Description: </ion-label>
-    <ion-textarea placeholder="Write your description here" rows ="6"></ion-textarea>
+    <ion-textarea placeholder="Write your description here" rows ="6" [(ngModel)]="descriptionText"></ion-textarea>
   </ion-item>
   <ion-item>
     <ion-label color="dark">Location: </ion-label>
@@ -29,10 +29,10 @@
   </ion-item>
   <ion-item>
     <ion-label color="dark"><h2>Activity start date: </h2></ion-label>
-    <ion-datetime displayFormat ="DD/MM/YYYY"></ion-datetime>
+    <ion-datetime displayFormat ="DD/MM/YYYY" [(ngModel)]="dateText"></ion-datetime>
   </ion-item>
   <ion-item>
-    <button ion-button small>
+    <button ion-button small (click)="createAd()">
       Create
     </button>
   </ion-item>

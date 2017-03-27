@@ -1,6 +1,7 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, PopoverController, NavParams } from 'ionic-angular';
 import { AdService } from '../../providers/ad-service/ad-service';
+
 @Component({
     template: `
       <p>pop works</p>
@@ -15,7 +16,6 @@ export class PopoverPage {
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html',
-  
     providers: [AdService]
 })
 export class HomePage {
