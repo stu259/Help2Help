@@ -39,9 +39,7 @@ export class HomePage {
             });
     }
 
-    showAdDetails(name) {
-      alert(name);
-      let modal = this.modalCtrl.create(ViewAdPage);
-      modal.present();
+    showAdDetails(ad) {
+      this.navCtrl.push(ViewAdPage, ad);
     }
 }

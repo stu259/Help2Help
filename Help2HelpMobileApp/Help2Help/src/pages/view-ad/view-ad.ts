@@ -1,5 +1,5 @@
 ﻿import { Component } from '@angular/core';
-import { ViewController, AlertController } from 'ionic-angular';
+import { NavParams, NavController, ViewController, AlertController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { AdService } from '../../providers/ad-service/ad-service';
 
@@ -9,18 +9,11 @@ import { AdService } from '../../providers/ad-service/ad-service';
     providers: [AdService]
 })
 export class ViewAdPage {
-    titleText: string = '';
-    descriptionText: string = '';
-    location: string = '';
-    dateText: string = ''; // set default value to be today
+    titleText: string = this.navParams.get('title');
+    descriptionText: string = this.navParams.get('description');
+    location: string = this.navParams.get('location');
+    dateText: string = this.navParams.get('date'); // set default value to be today
 
-    result: string = '';
-
-    constructor(public viewCtrl: ViewController, private geoLocation: Geolocation, public adsService: AdService, public alertCtrl: AlertController) {
-
-    }
-
-    close() {
-        this.viewCtrl.dismiss();
+    constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl: ViewController, private geoLocation: Geolocation, public adsService: AdService, public alertCtrl: AlertController) {
     }
 }
