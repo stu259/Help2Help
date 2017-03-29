@@ -2,7 +2,8 @@
 import { NavController } from 'ionic-angular';
 import { ModalController, ViewController } from 'ionic-angular';
 import { InsertAdPage } from '../insert-ad/insert-ad';
-import { AdService } from '../../providers/ad-service/ad-service';
+import { AdService } from '../../providers/ad-service';
+import { UserData } from '../../providers/user-data';
 
 @Component({
     selector: 'page-myads',

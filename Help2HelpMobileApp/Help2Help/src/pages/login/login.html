@@ -1,47 +1,14 @@
 ﻿<ion-header>
-
   <ion-navbar>
-
     <ion-title>
-      <div *ngIf="showLogin">
       <h2 class="center">Login</h2>
-      </div>
-      <div *ngIf="!showLogin">
-      <h2 class="center">Register</h2>
-      </div>
     </ion-title>
-    
   </ion-navbar>
-
 </ion-header>
 <ion-content padding>
-
-  <div *ngIf="showLogin">
-    <ion-item>
-      <ion-input type="email" placeholder="Email" [(ngModel)]="email"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
-    </ion-item>
-  </div>
-
-  <div *ngIf="!showLogin">
-
-    <ion-item>
-      <ion-input type="text" placeholder="Name" [(ngModel)]="name"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-input type="email" placeholder="Email" [(ngModel)]="email"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
-    </ion-item>
-  </div>
-
-  <button ion-button color="primary" full (click)="doLogin()">Login</button>
-  <button ion-button color="primary" full (click)="doRegister()">Register</button>
-
+  <ion-list>
+    <button ion-button color="primary" full (click)="doLogin('facebook')">Facebook</button>
+    <button ion-button color="primary" full (click)="doLogin('twitter')">Twitter</button>
+    <button ion-button color="primary" full (click)="doLogin('google')">Google</button>
+  </ion-list>
 </ion-content>

@@ -25,6 +25,9 @@ export class AdService {
         });
     }
 
+    loadSpecificUser() {
+    }
+
     getFullAddress(lat, lng) {
         var API_KEY = "AIzaSyBHwQ12lqjQybAUN7WPeBBHIK1E0wpMefM";
         if (this.data1) {
@@ -35,6 +38,26 @@ export class AdService {
         return new Promise(resolve => {
             this.http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat +
                 ',' + lng + '&result_type=street_address&key=' + API_KEY)
+                .map(res => res.json())
+                .subscribe(data => {
+                    // we've got back the raw data, now generate the core schedule data
+                    // and save the data for later reference
+                    this.data1 = data;
+                    resolve(this.data1.results[0]);
+                });
+        });
+    }
+
+    getLatLngFromAddress(location) {
+        var API_KEY = "AIzaSyBHwQ12lqjQybAUN7WPeBBHIK1E0wpMefM";
+        if (this.data1) {
+            return Promise.resolve(this.data1);
+        }
+
+        // don't have the data yet
+        return new Promise(resolve => {
+            this.http.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + location +
+                '&key' + API_KEY)
                 .map(res => res.json())
                 .subscribe(data => {
                     // we've got back the raw data, now generate the core schedule data

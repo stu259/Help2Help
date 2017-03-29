@@ -1,7 +1,7 @@
 ﻿<ion-menu [content]="content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Hello, {{ user.details.name }}</ion-title>
+      <ion-title [(ngModel)]="titleText" ngDefaultControl></ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>

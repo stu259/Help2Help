@@ -1,6 +1,7 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, PopoverController, NavParams } from 'ionic-angular';
-import { AdService } from '../../providers/ad-service/ad-service';
+import { AdService } from '../../providers/ad-service';
+import { ViewAdPage } from '../view-ad/view-ad';
 
 @Component({
     template: `
@@ -36,5 +37,9 @@ export class HomePage {
             .then(data => {
                 this.ads = data;
             });
+    }
+
+    showAdDetails(ad) {
+        this.navCtrl.push(ViewAdPage, ad);
     }
 }
