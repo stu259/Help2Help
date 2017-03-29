@@ -5,6 +5,7 @@ import { AdService } from '../../providers/ad-service';
 import { UserData } from '../providers/user-data';
 
 import { GoogleMap, GoogleMapsEvent, GoogleMapsLatLng } from 'ionic-native';
+import { SMS } from '@ionic-native/sms';
 
 
 @Component({
@@ -13,7 +14,6 @@ import { GoogleMap, GoogleMapsEvent, GoogleMapsLatLng } from 'ionic-native';
     providers: [AdService]
 })
 export class ViewAdPage {
-
     map: GoogleMap;
 
     titleText: string = this.navParams.get('title');
@@ -21,16 +21,30 @@ export class ViewAdPage {
     location: string = this.navParams.get('location');
     dateText: string = this.navParams.get('date'); // set default value to be today
 
-
-
     constructor(public navCtrl: NavController, public navParams: NavParams,
         public viewCtrl: ViewController, private geoLocation: Geolocation,
         public adsService: AdService, public alertCtrl: AlertController,
-        public platform: Platform) {
+        public platform: Platform, private smsVar: SMS) {
 
         platform.ready().then(() => {
             this.loadMap();
         });
+    }
+
+    createSMS() {
+        var options = {
+            replaceLineBreaks: false,
+            android: {
+                intent: 'INTENT'
+            }
+        }
+        this.smsVar.send("07467718448", "This is my n", options)
+            .then(() => {
+                alert("success");
+            }, () => {
+                alert("failure");
+            });
+
     }
 
     loadMap() {
@@ -74,3 +88,4 @@ export class ViewAdPage {
 
    
 }
+

@@ -24,6 +24,7 @@
     "@ionic-native/core": "^3.2.2",
     "@ionic-native/geolocation": "^3.2.2",
     "@ionic-native/google-maps": "^3.4.2",
+    "@ionic-native/sms": "^3.4.2",
     "@ionic/cloud-angular": "^0.11.0",
     "@ionic/storage": "2.0.0",
     "azure-mobile-apps-client": "^2.0.1",

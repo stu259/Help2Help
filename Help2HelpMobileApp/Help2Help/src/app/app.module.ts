@@ -12,6 +12,8 @@ import { MyAdsPage } from '../pages/myads/myads';
 import { InsertAdPage } from '../pages/insert-ad/insert-ad';
 import { ViewAdPage } from '../pages/view-ad/view-ad';
 import { UserData } from '../providers/user-data';
+import { SMS } from '@ionic-native/sms';
+
 
 @NgModule({
     declarations: [
@@ -39,6 +41,6 @@ import { UserData } from '../providers/user-data';
         PopoverPage,
         ViewAdPage
     ],
-    providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }, Geolocation, UserData, Storage]
+    providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }, Geolocation, UserData, Storage, SMS]
 })
 export class AppModule { }

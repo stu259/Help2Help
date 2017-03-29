@@ -106,4 +106,5 @@
     <variable name="API_KEY_FOR_ANDROID" value="AIzaSyBHwQ12lqjQybAUN7WPeBBHIK1E0wpMefM" />
     <variable name="API_KEY_FOR_IOS" value="AIzaSyBHwQ12lqjQybAUN7WPeBBHIK1E0wpMefM" />
   </plugin>
+  <plugin name="cordova-sms-plugin" spec="~0.1.11" src="https://github.com/cordova-sms/cordova-sms-plugin" />
 </widget>
