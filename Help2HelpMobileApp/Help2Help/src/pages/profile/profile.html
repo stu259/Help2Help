@@ -18,25 +18,21 @@
   </div>
   <ion-item>
     <ion-label color="dark" fixed>Name: </ion-label>
-    <ion-input value="{{ user.details.name }}" [(ngModel)]="nameText"></ion-input>
+    <ion-input [(ngModel)]="nameText">{{nameText}}</ion-input>
   </ion-item>
   <ion-item>
     <ion-label color="dark"><h2>Surname: </h2></ion-label>
-    <ion-input value="{{ user.details.surname }}" [(ngModel)]="surnameText"></ion-input>
+    <ion-input [(ngModel)]="surnameText">{{surnameText}}</ion-input>
   </ion-item>
   <ion-item>
-    <ion-label color="dark">Rating: ****</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label color="dark">Current password: </ion-label>
-    <ion-input type="password" [(ngModel)]="passwordText"></ion-input>
+    <ion-label color="dark">Rating: {{ratingText}}</ion-label>
   </ion-item>
   <ion-item>
     <ion-label color="dark">Bio: </ion-label>
-    <ion-textarea placeholder="Create your bio here" rows="6" [(ngModel)]="bioText"></ion-textarea>
+    <ion-textarea placeholder="Create your bio here" rows="6" [(ngModel)]="bioText">{{bioText}}</ion-textarea>
   </ion-item>
   <ion-item>
-    <button ion-button>
+    <button ion-button (click) ="updateUserDetails()">
       Apply changes
     </button>
   </ion-item>

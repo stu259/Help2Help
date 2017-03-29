@@ -52,8 +52,10 @@ export class MyApp {
     }
 
     openPage(page) {
+        if (this.nav.root === ProfilePage) {
+            this.updateTitle();
+        }
         this.nav.setRoot(page.component);
-        this.updateTitle();
     }
 
     logout() {
@@ -78,12 +80,12 @@ export class MyApp {
     }
 
     updateTitle() {
-        console.log("now");
-        this.titleText = "Hello!";
-        /*console.log("username: " + this.userData.getUsername());
-        this.userData.getUsername().then((username) => {
-            console.log("second: " + username);
-            //this.titleText = username;
-        });*/
+        console.log("update title");
+        var value: any;
+        this.userData.getUsername().then(data => {
+            value = data;
+            this.titleText = value;
+        });
+
     }
 }

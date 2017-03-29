@@ -28,7 +28,7 @@ export class UserData {
     }
 
     login(provider: string) {
-        this.setUsername("Stuart"); // ID or name
+        this.setUsername("e41a25fe943346ccb09851f0686fc9b8"); // ID or name
         this.events.publish('user:login');
         //this.client.login(provider).done(this.loginResponse.bind(this));
         //localforage.setItem(this.HAS_LOGGED_IN, true);
