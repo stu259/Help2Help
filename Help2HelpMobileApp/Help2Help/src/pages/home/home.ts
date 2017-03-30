@@ -34,12 +34,12 @@ export class HomePage {
     }
 
     presentFiler() {
-        let modal = this.modalCtrl.create(FilterPage);
+        let modal = this.modalCtrl.create(FilterPage, this.ads);
+        modal.onDidDismiss(((data: any[]) => {
+            this.ads = data;
+        }));
         modal.present();
 
-        modal.onWillDismiss(((data: any[]) => {
-            // update homepage
-        }));
     }
 
     pop(ev) {
