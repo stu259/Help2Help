@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 import { AdService } from '../../providers/ad-service';
 import { UserData } from '../../providers/user-data';
 
+
+
 @Component({
     selector: 'page-profile',
     templateUrl: 'profile.html',

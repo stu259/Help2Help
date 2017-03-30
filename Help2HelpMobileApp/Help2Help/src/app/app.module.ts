@@ -14,6 +14,7 @@ import { InsertAdPage } from '../pages/insert-ad/insert-ad';
 import { ViewAdPage } from '../pages/view-ad/view-ad';
 import { FilterPage } from '../pages/filter/filter';
 import { UserData } from '../providers/user-data';
+import { Ionic2RatingModule } from 'ionic2-rating';
 
 @NgModule({
     declarations: [
@@ -29,7 +30,8 @@ import { UserData } from '../providers/user-data';
     ],
     imports: [
         IonicModule.forRoot(MyApp),
-        IonicStorageModule.forRoot()
+        IonicStorageModule.forRoot(),
+        Ionic2RatingModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
