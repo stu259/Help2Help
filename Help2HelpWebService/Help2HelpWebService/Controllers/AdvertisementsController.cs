@@ -9,6 +9,7 @@ using Help2HelpWebService.Models;
 
 namespace Help2HelpWebService.Controllers
 {
+    [Authorize]
     public class AdvertisementsController : TableController<Advertising>
     {
         protected override void Initialize(HttpControllerContext controllerContext)
