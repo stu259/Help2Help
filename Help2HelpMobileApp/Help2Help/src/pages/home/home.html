@@ -7,21 +7,27 @@
       <h3 class="center">Help2Help</h3>
     </ion-title>
     <ion-buttons end>
-      <button ion-button (click)="pop($event)">
-        <ion-icon name="funnel"></ion-icon>
+      <button ion-button icon-only (click)="presentFiler()">
+        <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                   [(ngModel)]="queryText"
+                   (ionInput)="updateAds()"
+                   placeholder="Search">
+    </ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content class="home" padding>
-  <ion-list>
-    <ion-item *ngFor="let ad of ads" on-click="showAdDetails(ad)">
-      <h2>{{ ad.title }}</h2>
-      <p item-right>
+    <ion-card *ngFor="let ad of ads" on-click="showAdDetails(ad)">
+      <ion-card-header>{{ ad.title }}</ion-card-header>
+      <ion-card-content>
         {{ ad.location }}
+        <br>
         {{ ad.date }}
-      </p>
-    </ion-item>
-  </ion-list>
+      </ion-card-content>
+    </ion-card>
 </ion-content>

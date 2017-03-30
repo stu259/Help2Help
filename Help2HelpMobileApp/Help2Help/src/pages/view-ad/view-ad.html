@@ -2,25 +2,23 @@
   <ion-navbar>
   </ion-navbar>
 </ion-header>
-<ion-content scroll="false">
-<ion-item>
-  <ion-label color="dark" fixed>Title: {{titleText}}</ion-label>
-</ion-item>
-<ion-item>
-  <ion-label color="dark">Description: {{descriptionText}}</ion-label>
-</ion-item>
-<ion-item>
-  <ion-label color="dark"><h2>Activity start date: {{dateText}}</h2></ion-label>
-</ion-item>
-<ion-item>
-  <ion-label color="dark">Location: {{location}}</ion-label>
-</ion-item>
-<ion-item>
-  <button ion-button small (click)="createSMS()">
-    Contact
-  </button>
-</ion-item>
-  <ion-content scroll="false">
-    <div #map id="map"></div> 
-  </ion-content>
+<ion-content class="no-scroll">
+    <ion-card>
+      <ion-card-header>Title: {{titleText}}</ion-card-header>
+      <ion-card-content>
+        Description: {{descriptionText}}
+        <br>
+        Activity start date: {{dateText}}
+        <br>
+        Location: {{location}}
+        <br>
+        <button ion-button small (click)="createSMS()">
+          Contact
+        </button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-content>
+      <div #map id="map"></div>
+    </ion-content>
 </ion-content>

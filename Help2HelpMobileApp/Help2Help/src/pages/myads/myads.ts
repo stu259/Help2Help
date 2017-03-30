@@ -23,7 +23,7 @@ export class MyAdsPage {
     editAd(ad) {
         let modal = this.modalCtrl.create(UpdateAdPage, ad);
         modal.present();
-        this.navCtrl.setRoot(MyAdsPage);
+        
        
     }
     removeAd(ad) {

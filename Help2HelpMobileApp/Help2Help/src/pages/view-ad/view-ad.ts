@@ -50,7 +50,6 @@ export class ViewAdPage {
     loadMap() {
         let newLocation: any;
         this.adsService.getLatLngFromAddress(this.location).then(data => {
-            this.titleText = data.geometry.location.lat;
             newLocation = data.geometry.location;
             let location = new GoogleMapsLatLng(newLocation.lat, newLocation.lng);
 
@@ -67,25 +66,22 @@ export class ViewAdPage {
                     'tilt': true,
                     'rotate': true,
                     'zoom': true
-                },
-                'camera': {
-                    'latLng': location,
-                    'tilt': 30,
-                    'zoom': 15,
-                    'bearing': 50
                 }
             });
 
-
-
             this.map.on(GoogleMapsEvent.MAP_READY).subscribe(() => {
+                this.map.addMarker({
+                    'position': location,
+                    'title': "You"
+                });
 
+                this.map.moveCamera({
+                    'target': location,
+                    'tilt': 30,
+                    'zoom': 15,
+                    'bearing': 50
+                });
             });
         });
-
-        
     }
-
-   
 }
-
