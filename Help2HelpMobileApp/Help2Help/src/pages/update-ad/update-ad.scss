@@ -1,5 +1,8 @@
-﻿page-login {
+﻿page-update-ad {
     .center {
+        text-align: center;
+    }
+    #mainPage{
         text-align: center;
     }
 
@@ -43,15 +46,6 @@
       border-radius:100%;
       -moz-border-radius:100%;
       -webkit-border-radius:100%;
-    }
-
-    .vertical-center {
-      top: 30%;
-    }
-
-    .login-button {
-      padding: 8%;
-      height: 10%;
     }
 
     @-webkit-keyframes spin {

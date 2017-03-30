@@ -1,0 +1,39 @@
+﻿<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <h3 class="center">Update your Ad</h3>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+  <ion-item>
+    <ion-label color="dark" fixed>Title: </ion-label>
+    <ion-input [(ngModel)]="titleText"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="dark">Description: </ion-label>
+    <ion-textarea placeholder="Write your description here" rows="6" [(ngModel)]="descriptionText"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label color="dark">Location: </ion-label>
+    <ion-input [(ngModel)]="location"></ion-input>
+  </ion-item>
+  <ion-item>
+    <button ion-button small (click)="autoFillLocation()">
+      Get location
+    </button>
+  </ion-item>
+  <ion-item>
+    <ion-label color="dark"><h2>Activity start date: </h2></ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="dateText"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <button ion-button small (click)="updateAd()">
+      Update
+    </button>
+  </ion-item>
+</ion-header>
