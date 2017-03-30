@@ -24,7 +24,27 @@ export class AdService {
                 });
         });
     }
+    loadSpecificAd(adId) {
+        if (this.data1) {
+            return Promise.resolve(this.data1);
+        }
 
+        // don't have the data yet
+        return new Promise(resolve => {
+            let headers = new Headers({
+                'ZUMO-API-VERSION': '2.0.0'
+            });
+            let options = new RequestOptions({
+                headers: headers
+            });
+            this.http.get('http://help2helpservice.azurewebsites.net/tables/advertisements/' + adId, options)
+                .map(res => res.json())
+                .subscribe(data => {
+                    this.data1 = data;
+                    resolve(this.data1);
+                });
+        });
+    }
     loadSpecificUser(userId) {
         if (this.data1) {
             return Promise.resolve(this.data1);
@@ -132,6 +152,35 @@ export class AdService {
                 "biography": bio,
             });
             this.http.patch('http://help2helpservice.azurewebsites.net/tables/users/' + userId, body, options)
+                .map(res => res.json())
+                .subscribe(data => {
+                    // we've got back the raw data, now generate the core schedule data
+                    // and save the data for later reference
+                    this.data1 = "Success";
+                    resolve(this.data1);
+                }, (err) => {
+                    this.data1 = "Fail: " + err;
+                    resolve(this.data1)
+                });
+        });
+    }
+    modifyExistingAd(title, description, location, date,adId) {
+        return new Promise(resolve => {
+            let headers = new Headers({
+                'Content-Type': 'application/json',
+                'ZUMO-API-VERSION': '2.0.0'
+            });
+            let options = new RequestOptions({
+                headers: headers
+            });
+            let body = JSON.stringify({
+                "Title": title,
+                "Description": description,
+                "Location": location,
+                "Date": date,
+                "id": adId
+            });
+            this.http.patch('http://help2helpservice.azurewebsites.net/tables/advertisements/' + adId, body, options)
                 .map(res => res.json())
                 .subscribe(data => {
                     // we've got back the raw data, now generate the core schedule data

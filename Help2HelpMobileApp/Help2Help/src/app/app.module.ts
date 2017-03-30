@@ -10,6 +10,7 @@ import { LoginPage } from '../pages/login/login';
 import { ProfilePage } from '../pages/profile/profile';
 import { MyAdsPage } from '../pages/myads/myads';
 import { InsertAdPage } from '../pages/insert-ad/insert-ad';
+import { UpdateAdPage } from '../pages/update-ad/update-ad';
 import { ViewAdPage } from '../pages/view-ad/view-ad';
 import { UserData } from '../providers/user-data';
 import { SMS } from '@ionic-native/sms';
@@ -24,7 +25,8 @@ import { SMS } from '@ionic-native/sms';
         MyAdsPage,
         InsertAdPage,
         PopoverPage,
-        ViewAdPage
+        ViewAdPage,
+        UpdateAdPage
     ],
     imports: [
         IonicModule.forRoot(MyApp),
@@ -39,7 +41,8 @@ import { SMS } from '@ionic-native/sms';
         MyAdsPage,
         InsertAdPage,
         PopoverPage,
-        ViewAdPage
+        ViewAdPage,
+        UpdateAdPage
     ],
     providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }, Geolocation, UserData, Storage, SMS]
 })
