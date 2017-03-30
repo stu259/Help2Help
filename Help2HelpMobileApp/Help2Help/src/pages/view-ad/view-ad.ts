@@ -4,6 +4,8 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { AdService } from '../../providers/ad-service';
 import { UserData } from '../providers/user-data';
 
+import { ViewOtherProfilePage } from '../view-other-profile/view-other-profile';
+
 import { GoogleMap, GoogleMapsEvent, GoogleMapsLatLng } from 'ionic-native';
 import { SMS } from '@ionic-native/sms';
 
@@ -16,6 +18,7 @@ import { SMS } from '@ionic-native/sms';
 export class ViewAdPage {
     map: GoogleMap;
 
+    id: string = this.navParams.get("id");
     titleText: string = this.navParams.get('title');
     descriptionText: string = this.navParams.get('description');
     location: string = this.navParams.get('location');
@@ -29,6 +32,10 @@ export class ViewAdPage {
         platform.ready().then(() => {
             this.loadMap();
         });
+    }
+
+    viewProfile() {
+        this.navCtrl.push(ViewOtherProfilePage, {"id": this.id});
     }
 
     createSMS() {

@@ -2,7 +2,7 @@
 import { ViewController, AlertController, LoadingController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { AdService } from '../../providers/ad-service';
-import { UserData } from '../providers/user-data';
+import { UserData } from '../../providers/user-data';
 
 @Component({
     selector: 'page-insert-ad',
@@ -18,7 +18,7 @@ export class InsertAdPage {
     result: string = '';
 
     constructor(public viewCtrl: ViewController, private geoLocation: Geolocation,
-        public adsService: AdService, public alertCtrl: AlertController,
+        public adsService: AdService, public alertCtrl: AlertController, public userData: UserData,
         public loadingCtrl: LoadingController) {
     }
 
@@ -47,17 +47,20 @@ export class InsertAdPage {
           this.showAlert("Invalid submission", "Some entries were left blank");
         }
         else {
-          this.adsService.createNewAd(this.titleText, this.descriptionText, this.location, this.dateText).then(data => {
-              if (data == "Success") {
-                  // success alert
-                  this.showAlert(data, "Ad posted.");
-                  this.close();
-                  }
-                  else {
-                  // error alert
-                  this.showAlert("Connection error", "Could not connect to internet");
-                  }
-                  });
+        this.userData.getUsername().then((data) => {
+            var userId = data;
+            this.adsService.createNewAd(this.titleText, this.descriptionText, this.location, this.dateText, userId).then(data => {
+                if (data == "Success") {
+                    // success alert
+                    this.showAlert(data, "Ad posted.");
+                    this.close();
+                    }
+                    else {
+                    // error alert
+                    this.showAlert("Connection error", "Could not connect to internet");
+                    }
+                    });
+            });
         }
     }
 

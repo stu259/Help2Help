@@ -107,7 +107,7 @@ export class AdService {
         });
     }
 
-    createNewAd(title, description, location, date) {
+    createNewAd(title, description, location, date, userId) {
         return new Promise(resolve => {
             let headers = new Headers({
                 'Content-Type': 'application/json',
@@ -121,7 +121,7 @@ export class AdService {
                 "Description": description,
                 "Location": location,
                 "Date": date,
-                "UserId": 3 // Query to get current user Id
+                "Id": userId// Query to get current user Id
             });
             this.http.post('http://help2helpservice.azurewebsites.net/tables/advertisements', body, options)
                 .map(res => res.json())

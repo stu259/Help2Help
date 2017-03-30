@@ -26,7 +26,7 @@ export class ProfilePage {
         this.userData.getUsername().then((data) => {
             value = data;
             this.userId = value;
-            console.log(this.userId + "Hesfsdf");
+            console.log("My profile id:" + this.userId);
             this.adsService.loadSpecificUser(this.userId)
                 .then((data) => {
                     this.userDetails = data;
