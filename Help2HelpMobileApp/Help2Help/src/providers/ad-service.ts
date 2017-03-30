@@ -107,7 +107,7 @@ export class AdService {
         });
     }
 
-    createNewAd(title, description, location, date) {
+    createNewAd(title, description, location, date, userId) {
         return new Promise(resolve => {
             let headers = new Headers({
                 'Content-Type': 'application/json',
