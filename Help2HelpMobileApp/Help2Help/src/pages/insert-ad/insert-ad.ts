@@ -31,7 +31,7 @@ export class InsertAdPage {
         this.geoLocation.getCurrentPosition().then((pos) => {
             // get full address from google maps API
             var newPos = pos;
-            
+
             this.adsService.getFullAddress(newPos.coords.latitude, newPos.coords.longitude).then(data => {
                 this.location = data.formatted_address;
                 loader.dismissAll();
@@ -43,17 +43,26 @@ export class InsertAdPage {
     }
 
     createAd() {
-        this.adsService.createNewAd(this.titleText, this.descriptionText, this.location, this.dateText).then(data => {
-            if (data == "Success") {
-                // success alert
-                this.showAlert(data, "Ad posted.");
-                this.close();
-            }
-            else {
-                // error alert
-                this.showAlert("Error", data);
-            }
-        });
+        if ( !this.valid(this.titleText) || !this.valid(this.descriptionText) || !this.valid(this.location) || !this.valid(this.dateText)) {
+          this.showAlert("Invalid submission", "Some entries were left blank");
+        }
+        else {
+          this.adsService.createNewAd(this.titleText, this.descriptionText, this.location, this.dateText).then(data => {
+              if (data == "Success") {
+                  // success alert
+                  this.showAlert(data, "Ad posted.");
+                  this.close();
+                  }
+                  else {
+                  // error alert
+                  this.showAlert("Connection error", "Could not connect to internet");
+                  }
+                  });
+        }
+    }
+
+    valid(text) {
+        return text !== "" && text !== null;
     }
 
     showAlert(data, message) {

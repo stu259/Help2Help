@@ -1,8 +1,8 @@
 ﻿page-login {
     .center {
-        text-align: center;  
+        text-align: center;
     }
-    
+
     .ionic-logo {
       display: inline-flex;
       position:relative;
@@ -43,6 +43,10 @@
       border-radius:100%;
       -moz-border-radius:100%;
       -webkit-border-radius:100%;
+    }
+
+    .vertical-center {
+      top: 45%;
     }
 
     @-webkit-keyframes spin {
