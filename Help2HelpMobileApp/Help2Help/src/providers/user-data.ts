@@ -11,7 +11,7 @@ declare var WindowsAzure: any;
 @Injectable()
 export class UserData {
     client: any;
-    
+
     HAS_LOGGED_IN = 'hasLoggedIn';
 
     constructor(public events: Events) {
@@ -60,7 +60,7 @@ export class UserData {
             return value;
         });
     }
-    
+
     hasLoggedIn() {
         return localforage.getItem(this.HAS_LOGGED_IN).then((value) => {
             return value === true;

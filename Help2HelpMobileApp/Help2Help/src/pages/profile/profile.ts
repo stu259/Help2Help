@@ -1,7 +1,9 @@
-﻿import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController, AlertController} from 'ionic-angular';
 import { AdService } from '../../providers/ad-service';
 import { UserData } from '../../providers/user-data';
+
+
 
 @Component({
     selector: 'page-profile',
@@ -16,17 +18,15 @@ export class ProfilePage {
     surnameText: string = '';
     ratingText: string = '';
     bioText: string = '';
-   
-    constructor(public navCtrl: NavController, public userData: UserData, public adsService: AdService) {
+    constructor(public navCtrl: NavController, public userData: UserData, public adsService: AdService, public alertCtrl: AlertController) {
         this.loadUserDetails();
     }
-
     loadUserDetails() {
         var value: any;
         this.userData.getUsername().then((data) => {
             value = data;
             this.userId = value;
-            console.log(this.userId + "Hesfsdf");
+            console.log("My profile id:" + this.userId);
             this.adsService.loadSpecificUser(this.userId)
                 .then((data) => {
                     this.userDetails = data;
@@ -38,13 +38,23 @@ export class ProfilePage {
                     console.log(this.userDetails.name + "!!");
                 });
         });
-        
+
     }
 
     updateUserDetails() {
         this.adsService.modifyUserPofile(this.nameText, this.surnameText, this.bioText, this.userId)
             .then(() => {
-                console.log("user data modified");
+                this.showAlert("Contents updated", "Profile updated successfully!");
             });
     }
+
+
+    showAlert(data, message) {
+            let alert = this.alertCtrl.create({
+                title: data,
+                subTitle: message,
+                buttons: ['OK']
+            });
+            alert.present();
+        }
 }

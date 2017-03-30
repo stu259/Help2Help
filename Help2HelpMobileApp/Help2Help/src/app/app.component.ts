@@ -6,7 +6,6 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { ProfilePage } from '../pages/profile/profile';
 import { MyAdsPage } from '../pages/myads/myads';
-
 import { UserData } from '../providers/user-data'
 
 declare var WindowsAzure: any;
