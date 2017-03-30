@@ -17,24 +17,27 @@ export class MyAdsPage {
         this.loadAds();
     }
     showInsertAd() {
-      let modal = this.modalCtrl.create(InsertAdPage);
-      modal.present();
+        let modal = this.modalCtrl.create(InsertAdPage);
+        modal.present();
     }
     editAd(ad) {
         let modal = this.modalCtrl.create(UpdateAdPage, ad);
+        modal.onDidDismiss(() => {
+            this.loadAds();
+        });
         modal.present();
-        
-       
     }
     removeAd(ad) {
-
+        this.adsService.removeAd(ad.id);
     }
     loadAds() {
         this.adsService.load()
             .then(data => {
-                    this.ads = data;
-                
+
+                console.log("test update");
+                this.ads = data;
+                console.log("after");
+                console.log("after:" + this.ads);
             });
     }
-
 }

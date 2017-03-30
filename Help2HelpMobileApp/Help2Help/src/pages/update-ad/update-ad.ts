@@ -47,6 +47,7 @@ export class UpdateAdPage {
             if (data == "Success") {
                 // success alert
                 this.showAlert(data, "Ad udpated.");
+                this.dismiss();
                 this.close();
             }
             else {
@@ -56,7 +57,9 @@ export class UpdateAdPage {
         });
         
     }
-
+    dismiss() {
+        this.viewCtrl.dismiss();
+    }
     showAlert(data, message) {
         let alert = this.alertCtrl.create({
             title: data,
