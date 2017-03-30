@@ -66,13 +66,7 @@ export class ViewAdPage {
                     'tilt': true,
                     'rotate': true,
                     'zoom': true
-                },
-                /*'camera': {
-                    'latLng': location,
-                    'tilt': 30,
-                    'zoom': 15,
-                    'bearing': 50
-                }*/
+                }
             });
 
             this.map.on(GoogleMapsEvent.MAP_READY).subscribe(() => {

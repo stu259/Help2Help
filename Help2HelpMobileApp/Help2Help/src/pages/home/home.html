@@ -7,8 +7,8 @@
       <h3 class="center">Help2Help</h3>
     </ion-title>
     <ion-buttons end>
-      <button ion-button (click)="pop($event)">
-        <ion-icon name="funnel"></ion-icon>
+      <button ion-button icon-only (click)="presentFiler()">
+        <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -17,7 +17,6 @@
                    [(ngModel)]="queryText"
                    (ionInput)="updateAds()"
                    placeholder="Search">
-
     </ion-searchbar>
   </ion-toolbar>
 </ion-header>

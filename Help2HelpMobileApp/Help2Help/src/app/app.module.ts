@@ -3,6 +3,7 @@
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
 import { Geolocation } from '@ionic-native/geolocation';
+import { SMS } from '@ionic-native/sms';
 
 import { MyApp } from './app.component';
 import { HomePage, PopoverPage } from '../pages/home/home';
@@ -11,9 +12,8 @@ import { ProfilePage } from '../pages/profile/profile';
 import { MyAdsPage } from '../pages/myads/myads';
 import { InsertAdPage } from '../pages/insert-ad/insert-ad';
 import { ViewAdPage } from '../pages/view-ad/view-ad';
+import { FilterPage } from '../pages/filter/filter';
 import { UserData } from '../providers/user-data';
-import { SMS } from '@ionic-native/sms';
-
 
 @NgModule({
     declarations: [
@@ -24,7 +24,8 @@ import { SMS } from '@ionic-native/sms';
         MyAdsPage,
         InsertAdPage,
         PopoverPage,
-        ViewAdPage
+        ViewAdPage,
+        FilterPage
     ],
     imports: [
         IonicModule.forRoot(MyApp),
@@ -39,7 +40,8 @@ import { SMS } from '@ionic-native/sms';
         MyAdsPage,
         InsertAdPage,
         PopoverPage,
-        ViewAdPage
+        ViewAdPage,
+        FilterPage
     ],
     providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }, Geolocation, UserData, Storage, SMS]
 })

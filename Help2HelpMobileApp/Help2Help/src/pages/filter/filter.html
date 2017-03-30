@@ -1,0 +1,30 @@
+﻿<ion-header>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">Cancel</button>
+    </ion-buttons>
+    <ion-title>
+      Filter Sessions
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="applyFilters()" strong>Done</button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="outer-content">
+  <ion-item>
+    <ion-label>Filter #1</ion-label>
+    <ion-toggle checked="false" color="secondary"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label>Filter #2</ion-label>
+    <ion-toggle checked="true" color="royal"></ion-toggle>
+  </ion-item>
+
+  <ion-list>
+    <button ion-item (click)="resetFilters()" detail-none class="reset-filters">
+      Reset All Filters
+    </button>
+  </ion-list>
+</ion-content>
