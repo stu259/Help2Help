@@ -20,11 +20,17 @@ export class PopoverPage {
     providers: [AdService]
 })
 export class HomePage {
+    queryText = '';
     ads: any;
 
     constructor(public navCtrl: NavController, public adsService: AdService, public popoverCtrl: PopoverController, public modalCtrl: ModalController) {
         this.loadAds();
     }
+
+    ionViewDidLoad() {
+        this.updateSchedule();
+    }
+
     pop(ev) {
         let popover = this.popoverCtrl.create(PopoverPage, {});
 
@@ -41,5 +47,9 @@ export class HomePage {
 
     showAdDetails(ad) {
         this.navCtrl.push(ViewAdPage, ad);
+    }
+
+    updateSchedule() {
+        // update on search text modification
     }
 }

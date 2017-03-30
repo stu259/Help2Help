@@ -12,6 +12,14 @@
       </button>
     </ion-buttons>
   </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                   [(ngModel)]="queryText"
+                   (ionInput)="updateAds()"
+                   placeholder="Search">
+
+    </ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content class="home" padding>
