@@ -22,13 +22,12 @@
 </ion-header>
 
 <ion-content class="home" padding>
-  <ion-list>
-    <ion-item *ngFor="let ad of ads" on-click="showAdDetails(ad)">
-      <h2>{{ ad.title }}</h2>
-      <p item-right>
+    <ion-card *ngFor="let ad of ads" on-click="showAdDetails(ad)">
+      <ion-card-header>{{ ad.title }}</ion-card-header>
+      <ion-card-content>
         {{ ad.location }}
+        <br>
         {{ ad.date }}
-      </p>
-    </ion-item>
-  </ion-list>
+      </ion-card-content>
+    </ion-card>
 </ion-content>
