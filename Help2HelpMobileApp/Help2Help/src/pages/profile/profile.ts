@@ -1,7 +1,9 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController, AlertController} from 'ionic-angular';
 import { AdService } from '../../providers/ad-service';
 import { UserData } from '../../providers/user-data';
+
+
 
 @Component({
     selector: 'page-profile',
@@ -16,11 +18,9 @@ export class ProfilePage {
     surnameText: string = '';
     ratingText: string = '';
     bioText: string = '';
-
     constructor(public navCtrl: NavController, public userData: UserData, public adsService: AdService, public alertCtrl: AlertController) {
         this.loadUserDetails();
     }
-
     loadUserDetails() {
         var value: any;
         this.userData.getUsername().then((data) => {
