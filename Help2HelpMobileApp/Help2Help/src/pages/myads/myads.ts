@@ -24,14 +24,6 @@ export class MyAdsPage {
         this.loadAds();
     }
     editAd(ad) {
-        var i;
-        for (i = 0; i < this.ads.length; i++) {
-
-            if (this.ads[i] == ad) {
-                this.ads.splice(i, 1);
-                this.ads[i].title =
-            }
-        }
         let modal = this.modalCtrl.create(UpdateAdPage, ad);
         modal.onDidDismiss(() => {
             this.loadAds();
