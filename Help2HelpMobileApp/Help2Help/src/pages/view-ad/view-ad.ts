@@ -37,7 +37,6 @@ export class ViewAdPage {
     viewProfile() {
         this.navCtrl.push(ViewOtherProfilePage, {"id": this.id});
     }
-
     createSMS() {
         var options = {
             replaceLineBreaks: false,

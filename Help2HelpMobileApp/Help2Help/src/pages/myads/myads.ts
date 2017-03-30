@@ -20,7 +20,18 @@ export class MyAdsPage {
         let modal = this.modalCtrl.create(InsertAdPage);
         modal.present();
     }
+    ionViewWillEnter() {
+        this.loadAds();
+    }
     editAd(ad) {
+        var i;
+        for (i = 0; i < this.ads.length; i++) {
+
+            if (this.ads[i] == ad) {
+                this.ads.splice(i, 1);
+                this.ads[i].title =
+            }
+        }
         let modal = this.modalCtrl.create(UpdateAdPage, ad);
         modal.onDidDismiss(() => {
             this.loadAds();
@@ -28,6 +39,13 @@ export class MyAdsPage {
         modal.present();
     }
     removeAd(ad) {
+        var i;
+        for (i = 0; i < this.ads.length; i++) {
+
+            if (this.ads[i] == ad) {
+                this.ads.splice(i, 1);
+            }
+        }
         this.adsService.removeAd(ad.id);
     }
     loadAds() {
