@@ -1,5 +1,5 @@
 ﻿import { Component } from '@angular/core';
-import { ViewController, AlertController } from 'ionic-angular';
+import { ViewController, AlertController, LoadingController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { AdService } from '../../providers/ad-service';
 import { UserData } from '../providers/user-data';
@@ -17,17 +17,29 @@ export class InsertAdPage {
 
     result: string = '';
 
-    constructor(public viewCtrl: ViewController, private geoLocation: Geolocation, public adsService: AdService, public alertCtrl: AlertController) {
-
+    constructor(public viewCtrl: ViewController, private geoLocation: Geolocation,
+        public adsService: AdService, public alertCtrl: AlertController,
+        public loadingCtrl: LoadingController) {
     }
 
     autoFillLocation() {
+        let loader = this.loadingCtrl.create({
+            content: "Getting location..."
+        });
+        loader.present();
+
         this.geoLocation.getCurrentPosition().then((pos) => {
             // get full address from google maps API
-            this.adsService.getFullAddress(pos.coords.latitude, pos.coords.longitude).then(data => {
+            var newPos = pos;
+            
+            this.adsService.getFullAddress(newPos.coords.latitude, newPos.coords.longitude).then(data => {
                 this.location = data.formatted_address;
+                loader.dismissAll();
             });
-        }).catch((error) => { this.location = 'Could not get geolocation'; });
+        }).catch((error) => {
+            this.location = 'Could not get geolocation';
+            loader.dismissAll();
+        });
     }
 
     createAd() {
