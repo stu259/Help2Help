@@ -30,7 +30,7 @@ export class HomePage {
     }
 
     ionViewDidLoad() {
-        this.updateSchedule();
+        this.updateAds();
     }
 
     presentFiler() {
@@ -60,7 +60,11 @@ export class HomePage {
         this.navCtrl.push(ViewAdPage, ad);
     }
 
-    updateSchedule() {
+    updateAds() {
         // update on search text modification
+        this.adsService.searchAds(this.queryText)
+            .then(data => {
+                this.ads = data;
+            });
     }
 }

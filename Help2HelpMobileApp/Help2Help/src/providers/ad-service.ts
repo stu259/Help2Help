@@ -144,4 +144,40 @@ export class AdService {
                 });
         });
     }
+
+    searchAds(queryText) {
+        let found = false;
+        let newData = [];
+        return this.load().then((data: any) => {
+            console.log("is searchAds being called?");
+            if (queryText === '') {
+                console.log("if condition is met");
+                return Promise.resolve(data);
+            }
+            queryText = queryText.toLowerCase().replace(/,|\.|-/, ' ');
+            let queryWords = queryText.split(' ').filter(w => !!w.trim().length);
+            data.forEach((filteredAds: any) => {
+                found = false;
+                queryWords.forEach((queryWord: string) => {
+                    console.log(queryWord + " this is the query word");
+                    if (filteredAds.title.toLowerCase().includes(queryWord)) {
+                        found = true;
+                    }
+                    else if (filteredAds.description.toLowerCase().includes(queryWord)) {
+                        found = true;
+                    }
+                    else if (filteredAds.location.toLowerCase().includes(queryWord)) {
+                        found = true;
+                    }
+                });
+                if (found) {
+                    newData.push(filteredAds);
+                }
+            });
+            newData.forEach((testData: any) => {
+                console.log(testData.title);
+            });
+            return Promise.resolve(newData);
+        });
+    }
 }
