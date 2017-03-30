@@ -4,10 +4,13 @@
 </ion-header>
 <ion-content class="no-scroll">
     <ion-card>
-      <ion-card-header>Name: {{userId}}</ion-card-header>
+      <ion-card-header>Name: {{nameText}} {{surnameText}}</ion-card-header>
       <ion-card-content>
       <ion-label>Bio: {{bioText}}</ion-label>
       <ion-label>Rating: {{ratingText}}</ion-label>
+        <button ion-button small (click)="createSMS()">
+          Send SMS
+        </button>
       </ion-card-content>
     </ion-card>
 </ion-content>

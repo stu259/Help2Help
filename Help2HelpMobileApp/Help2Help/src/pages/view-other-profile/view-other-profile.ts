@@ -64,7 +64,7 @@ export class ViewOtherProfilePage {
                 intent: 'INTENT'
             }
         }
-        this.smsVar.send("07467718448", "This is my n", options)
+        this.smsVar.send("07467718448", "Greetings, I am interested in this activity. I look forward to meeting you!", options)
             .then(() => {
                 alert("success");
             }, () => {
