@@ -2,6 +2,7 @@
 import { NavController } from 'ionic-angular';
 import { ModalController, ViewController } from 'ionic-angular';
 import { InsertAdPage } from '../insert-ad/insert-ad';
+import { UpdateAdPage } from '../update-ad/update-ad';
 import { AdService } from '../../providers/ad-service';
 import { UserData } from '../../providers/user-data';
 
@@ -15,10 +16,15 @@ export class MyAdsPage {
     constructor(public navCtrl: NavController, public modalCtrl: ModalController, public adsService: AdService) {
         this.loadAds();
     }
-
     showInsertAd() {
       let modal = this.modalCtrl.create(InsertAdPage);
       modal.present();
+    }
+    editAd(ad) {
+        let modal = this.modalCtrl.create(UpdateAdPage, ad);
+        modal.present();
+        
+       
     }
     removeAd(ad) {
 
