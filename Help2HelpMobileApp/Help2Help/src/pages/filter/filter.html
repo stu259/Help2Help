@@ -4,7 +4,7 @@
       <button ion-button (click)="dismiss()">Cancel</button>
     </ion-buttons>
     <ion-title>
-      Filter Sessions
+      Filter Advertisements
     </ion-title>
     <ion-buttons end>
       <button ion-button (click)="applyFilters()" strong>Done</button>
@@ -14,17 +14,19 @@
 
 <ion-content class="outer-content">
   <ion-item>
-    <ion-label>Filter #1</ion-label>
-    <ion-toggle checked="false" color="secondary"></ion-toggle>
+    <ion-label color="dark">Sorting By</ion-label>
+    <ion-select [(ngModel)]="sortBy">
+      <ion-option value="title" selected ="true">Title</ion-option>
+      <ion-option value="date">Date</ion-option>
+      <ion-option value="location">Location</ion-option>
+    </ion-select>
   </ion-item>
-  <ion-item>
-    <ion-label>Filter #2</ion-label>
-    <ion-toggle checked="true" color="royal"></ion-toggle>
-  </ion-item>
-
-  <ion-list>
-    <button ion-item (click)="resetFilters()" detail-none class="reset-filters">
-      Reset All Filters
-    </button>
-  </ion-list>
+    <ion-item>
+      <ion-label>Sort Ascending</ion-label>
+      <ion-toggle [(ngModel)]="ascending" checked="true" color="secondary" (ionChange)="toggleAscending()"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Sort Descending </ion-label>
+      <ion-toggle [(ngModel)]="descending" checked="false" color="secondary" (ionChange)="toggleDescending()"></ion-toggle>
+    </ion-item>
 </ion-content>
